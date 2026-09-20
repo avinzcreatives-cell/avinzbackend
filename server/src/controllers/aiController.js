@@ -53,7 +53,7 @@ export const handleChat = async (req, res) => {
       parts: [{ text: msg.text || msg.content }]
     }));
 
-    const modelName = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite';
+    const modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
 
     const response = await ai.models.generateContent({
       model: modelName,

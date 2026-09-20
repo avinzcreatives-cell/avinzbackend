@@ -3,7 +3,7 @@
  * Handles communications with the Express.js mail backend
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://avinzbackend-2.onrender.com/api';
 
 export const sendContactMessage = async (formData) => {
   try {
