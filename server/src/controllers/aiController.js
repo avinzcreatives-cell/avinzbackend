@@ -48,10 +48,15 @@ export const handleChat = async (req, res) => {
     // Convert generic chat history to format expected by API (role: 'user' or 'model')
     // and extract only the latest message to generateContent, or use a chat session.
     // The simplest way is to pass contents array.
-    const contents = messages.map(msg => ({
+    let contents = messages.map(msg => ({
       role: msg.role === 'ai' || msg.role === 'model' ? 'model' : 'user',
       parts: [{ text: msg.text || msg.content }]
     }));
+
+    // Google Gemini API strictly requires the first message in history to be from the 'user'
+    if (contents.length > 0 && contents[0].role === 'model') {
+      contents.shift();
+    }
 
     const modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
 
