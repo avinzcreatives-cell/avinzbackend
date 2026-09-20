@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 export const CTABanner = ({
   badge = "LET'S WORK TOGETHER",
   title = "Ready to Build Your Future?",
-  subtitle = "Learn in-demand skills, work on real projects and kick-start your career with the right guidance from industry experts.",
-  primaryBtnText = "Explore Courses",
-  primaryBtnLink = "/courses",
+  subtitle = "Get your dream project designed and developed by our experts.",
+  primaryBtnText = "Our Services",
+  primaryBtnLink = "/services",
   secondaryBtnText = "Contact Us",
   secondaryBtnLink = "/contact",
   onPrimaryClick = null,
@@ -82,7 +82,7 @@ export const CTABanner = ({
                     <span className="badge rounded-circle bg-success p-1">
                       <i className="bi bi-check-lg text-white"></i>
                     </span>
-                    <span>100% Placement Support</span>
+                    <span>Top Rated Agency</span>
                   </div>
                 </div>
               </div>

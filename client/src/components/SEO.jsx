@@ -13,7 +13,7 @@ export const SEO = ({
 }) => {
   const fullTitle = title 
     ? `${title} | ${COMPANY_INFO.name}`
-    : `${COMPANY_INFO.name} | Design Agency & Technology Training Institute`;
+    : `${COMPANY_INFO.name} | Creative Design Agency in Coimbatore`;
 
   const metaDesc = description || COMPANY_INFO.shortDesc;
 

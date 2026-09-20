@@ -13,49 +13,12 @@ import {
 export const Home = ({ onOpenGetStarted }) => {
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // Exact 5 cards from "WHY CHOOSE US: We Focus on Your Success"
-  const whyChooseUsCards = [
-    {
-      id: 1,
-      title: "Expert Mentors",
-      desc: "Industry-experienced trainers & designers",
-      icon: "bi-person-badge-fill",
-      color: "#2563eb",
-      bg: "#eff6ff"
-    },
-    {
-      id: 2,
-      title: "Hands-on Learning",
-      desc: "Practical projects for real-world experience.",
-      icon: "bi-puzzle-fill",
-      color: "#3b82f6",
-      bg: "#eff6ff"
-    },
-    {
-      id: 3,
-      title: "Portfolio Ready",
-      desc: "Build a strong portfolio that gets you noticed.",
-      icon: "bi-layout-text-window-reverse",
-      color: "#2563eb",
-      bg: "#eff6ff"
-    },
-    {
-      id: 4,
-      title: "Career Support",
-      desc: "Placement assistance & career guidance.",
-      icon: "bi-headset",
-      color: "#2563eb",
-      bg: "#eff6ff"
-    },
-    {
-      id: 5,
-      title: "Affordable Pricing",
-      desc: "High-quality services and training at best prices.",
-      icon: "bi-tag-fill",
-      color: "#2563eb",
-      bg: "#eff6ff"
-    }
-  ];
+  // Using WHY_CHOOSE_US_HOME from websiteData.js for the cards
+  const whyChooseUsCards = WHY_CHOOSE_US_HOME.map(item => ({
+    ...item,
+    color: "#2563eb",
+    bg: "#eff6ff"
+  }));
 
   // Exact 4 Projects matching the mockups
   const homeProjects = [
@@ -100,8 +63,8 @@ export const Home = ({ onOpenGetStarted }) => {
   return (
     <>
       <SEO
-        title="Home | Design. Develop. Learn. Grow."
-        description="Avinz Creatives - Creative Design Agency & Technology Training Institute in Coimbatore. Design, Develop, Learn, Grow with practical learning and 100% placement support."
+        title="Home | Creative Design Agency"
+        description="Avinz Creatives - Creative Design Agency in Coimbatore. We help businesses build a strong digital presence through creative design and website development."
       />
 
       {/* ====================================================================
@@ -115,26 +78,26 @@ export const Home = ({ onOpenGetStarted }) => {
             {/* Left Column: Headline & Value Proposition */}
             <div className="col-lg-6">
               <span className="section-badge mb-3" style={{ background: '#eff6ff', color: '#2563eb', border: '1px solid #bfdbfe', padding: '6px 16px', borderRadius: '50px', fontSize: '0.82rem', fontWeight: '700' }}>
-                Creative Design Agency & Technology Training Institute 🚀
+                Creative Design Agency 🚀
               </span>
 
               <h1 className="hero-title mt-2 fw-bold" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', lineHeight: 1.15, color: '#09132e', letterSpacing: '-0.02em' }}>
                 Design. Develop.<br />
-                <span style={{ color: '#2563eb' }}>Learn. Grow.</span>
+                <span style={{ color: '#2563eb' }}>Launch.</span>
               </h1>
 
               <p className="hero-subtitle text-secondary mb-4" style={{ fontSize: '1.02rem', lineHeight: 1.75, maxWidth: '520px' }}>
-                We help businesses build a strong digital presence through creative design and website development, while empowering students with industry-focused technology training and real-world project experience.
+                We help businesses build a strong digital presence through creative design and website development.
               </p>
 
               {/* Action Buttons */}
               <div className="d-flex flex-wrap align-items-center gap-3 mb-4 hero-actions">
                 <button 
-                  onClick={() => onOpenGetStarted('enroll')} 
+                  onClick={() => onOpenGetStarted('quote')} 
                   className="btn btn-avinz-primary px-4 py-3"
                   style={{ background: '#2563eb', borderRadius: '50px', fontWeight: '600', fontSize: '0.95rem' }}
                 >
-                  Explore Courses <i className="bi bi-arrow-right ms-1"></i>
+                  Get a Quote <i className="bi bi-arrow-right ms-1"></i>
                 </button>
                 <button 
                   onClick={() => onOpenGetStarted('quote')} 
@@ -149,15 +112,15 @@ export const Home = ({ onOpenGetStarted }) => {
               <div className="d-flex flex-wrap gap-2 pt-2 hero-badges-strip">
                 <div className="hero-pill-item d-inline-flex align-items-center gap-2 px-3 py-2 bg-white border rounded-pill shadow-sm" style={{ fontSize: '0.84rem', fontWeight: '600', color: '#0f172a' }}>
                   <i className="bi bi-person-workspace text-primary"></i>
-                  <span>Industry Experts</span>
+                  <span>Creative Experts</span>
                 </div>
                 <div className="hero-pill-item d-inline-flex align-items-center gap-2 px-3 py-2 bg-white border rounded-pill shadow-sm" style={{ fontSize: '0.84rem', fontWeight: '600', color: '#0f172a' }}>
                   <i className="bi bi-laptop text-primary"></i>
-                  <span>Practical Learning</span>
+                  <span>Custom Solutions</span>
                 </div>
                 <div className="hero-pill-item d-inline-flex align-items-center gap-2 px-3 py-2 bg-white border rounded-pill shadow-sm" style={{ fontSize: '0.84rem', fontWeight: '600', color: '#0f172a' }}>
                   <i className="bi bi-patch-check-fill text-primary"></i>
-                  <span>100% Placement Support</span>
+                  <span>Client Success</span>
                 </div>
               </div>
             </div>
@@ -185,10 +148,10 @@ export const Home = ({ onOpenGetStarted }) => {
           <div className="text-center mb-5">
             <span className="section-badge">WHAT WE DO</span>
             <h2 className="display-6 fw-bold mb-2" style={{ color: '#09132e' }}>
-              Creative Solutions & <span style={{ color: '#2563eb' }}>SMART</span> Training
+              Creative <span style={{ color: '#2563eb' }}>Solutions</span>
             </h2>
             <p className="text-muted" style={{ maxWidth: '600px', margin: '0 auto', fontSize: '0.95rem' }}>
-              We combine creativity, technology and teaching to deliver the best results.
+              We combine creativity and technology to deliver the best results.
             </p>
           </div>
 
@@ -238,7 +201,7 @@ export const Home = ({ onOpenGetStarted }) => {
               We Focus on Your <span style={{ color: '#2563eb' }}>Success</span>
             </h2>
             <p className="text-muted" style={{ maxWidth: '600px', margin: '0 auto', fontSize: '0.95rem' }}>
-              Quality training. Creative solutions. Real results.
+              Creative solutions. Real results.
             </p>
           </div>
 
@@ -261,7 +224,7 @@ export const Home = ({ onOpenGetStarted }) => {
             ))}
           </div>
 
-          {/* 4. Royal Blue Stats Banner (100+ Students | 50+ Projects | 25+ Websites | 100% Practical) */}
+          {/* 4. Royal Blue Stats Banner */}
           <div className="mt-5 pt-3">
             <StatsBanner />
           </div>
@@ -321,10 +284,10 @@ export const Home = ({ onOpenGetStarted }) => {
           <div className="text-center mb-5">
             <span className="section-badge">WHAT OUR STUDENTS SAY</span>
             <h2 className="display-6 fw-bold mb-2" style={{ color: '#09132e' }}>
-              Success <span style={{ color: '#2563eb' }}>Stories</span>
+              Client Success <span style={{ color: '#2563eb' }}>Stories</span>
             </h2>
             <p className="text-muted" style={{ maxWidth: '600px', margin: '0 auto', fontSize: '0.95rem' }}>
-              Happy students, successful careers.
+              Happy clients, successful businesses.
             </p>
           </div>
 
@@ -351,9 +314,11 @@ export const Home = ({ onOpenGetStarted }) => {
                     </p>
                   </div>
 
-                  <div className="text-warning" style={{ fontSize: '1rem', letterSpacing: '2px' }}>
-                    {"★".repeat(item.rating)}
-                  </div>
+                  {item.rating > 0 && (
+                    <div className="text-warning" style={{ fontSize: '1rem', letterSpacing: '2px' }}>
+                      {"★".repeat(item.rating)}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -373,12 +338,12 @@ export const Home = ({ onOpenGetStarted }) => {
             }}
           >
             <div className="row align-items-center g-4">
-              {/* Left Column: Character with Laptop */}
-              <div className="col-lg-4 d-flex justify-content-center justify-content-lg-start">
-                <div className="position-relative" style={{ maxWidth: '280px' }}>
-                  <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80"
-                    alt="Avinz Creatives Career Support"
+              {/* Left Column: Image/Graphic */}
+              <div className="col-lg-4 text-center mb-4 mb-lg-0">
+                <div className="position-relative d-inline-block">
+                  <img 
+                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=500&q=80"
+                    alt="Avinz Creatives Design Agency"
                     className="img-fluid rounded-4 shadow"
                     style={{ maxHeight: '220px', objectFit: 'cover' }}
                   />
@@ -386,7 +351,7 @@ export const Home = ({ onOpenGetStarted }) => {
                     className="position-absolute bottom-0 start-0 m-2 px-3 py-1 rounded-pill bg-white text-dark shadow-sm d-flex align-items-center gap-1"
                     style={{ fontSize: '0.75rem', fontWeight: '700' }}
                   >
-                    <i className="bi bi-patch-check-fill text-primary"></i> 100% Placement
+                    <i className="bi bi-patch-check-fill text-primary"></i> Top Rated Agency
                   </div>
                 </div>
               </div>
@@ -394,15 +359,15 @@ export const Home = ({ onOpenGetStarted }) => {
               {/* Right Column: Copy & Actions */}
               <div className="col-lg-8 text-center text-lg-start">
                 <h2 className="text-white fw-bold mb-2" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.3rem)', letterSpacing: '-0.02em' }}>
-                  Ready to Build Your Future?
+                  Ready to Start Your Project?
                 </h2>
                 <p className="text-white-50 mb-4" style={{ fontSize: '0.98rem', maxWidth: '560px', lineHeight: 1.6 }}>
-                  Join our training programs or get your dream project designed and developed by our experts.
+                  Get your dream project designed and developed by our experts.
                 </p>
 
                 <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
                   <button 
-                    onClick={() => onOpenGetStarted('enroll')} 
+                    onClick={() => onOpenGetStarted('quote')} 
                     className="btn btn-light text-primary px-4 py-2 fw-bold"
                     style={{ borderRadius: '50px', fontSize: '0.92rem' }}
                   >

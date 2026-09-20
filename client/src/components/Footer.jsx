@@ -40,7 +40,6 @@ export const Footer = () => {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/services">Services</Link></li>
-              <li><Link to="/courses">Courses</Link></li>
               <li><Link to="/projects">Projects</Link></li>
               <li><Link to="/testimonials">Testimonials</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
@@ -57,20 +56,6 @@ export const Footer = () => {
               <li><Link to="/services">Graphic Design</Link></li>
               <li><Link to="/services">Brand Identity</Link></li>
               <li><Link to="/services">Social Media Design</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 4: Our Courses */}
-          <div className="col-6 col-md-3 col-lg-2">
-            <h5 className="footer-heading">Our Courses</h5>
-            <ul className="footer-links-list">
-              <li><Link to="/courses">UI/UX Design</Link></li>
-              <li><Link to="/courses">MERN Stack Development</Link></li>
-              <li><Link to="/courses">Full Stack Development</Link></li>
-              <li><Link to="/courses">Data Analytics</Link></li>
-              <li><Link to="/courses">Machine Learning</Link></li>
-              <li><Link to="/courses">DevOps</Link></li>
-              <li><Link to="/courses">Digital Marketing</Link></li>
             </ul>
           </div>
 

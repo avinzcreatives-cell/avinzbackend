@@ -59,11 +59,6 @@ export const Navbar = ({ onOpenGetStarted }) => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/courses" className={({ isActive }) => `nav-link avinz-nav-link ${isActive ? 'active' : ''}`}>
-                Courses
-              </NavLink>
-            </li>
-            <li className="nav-item">
               <NavLink to="/projects" className={({ isActive }) => `nav-link avinz-nav-link ${isActive ? 'active' : ''}`}>
                 Projects
               </NavLink>

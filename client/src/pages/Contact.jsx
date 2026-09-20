@@ -82,8 +82,8 @@ export const Contact = ({ onOpenGetStarted }) => {
   return (
     <>
       <SEO
-        title="Contact Us | CreatiVate - Let's Connect. We're Here to Help!"
-        description="Have a project in mind, need help choosing a course, or just want to say hello? Reach out to CreatiVate in Coimbatore, Tamil Nadu, India."
+        title="Contact Us | Avinz Creatives - Let's Connect. We're Here to Help!"
+        description="Have a project in mind or just want to say hello? Reach out to Avinz Creatives in Coimbatore, Tamil Nadu, India."
       />
 
       <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingTop: '105px' }}>
@@ -153,7 +153,7 @@ export const Contact = ({ onOpenGetStarted }) => {
                     maxWidth: '460px'
                   }}
                 >
-                  Have a project in mind, need help choosing a course, or just want to say hello? We'd love to hear from you. Reach out to us anytime!
+                  Have a project in mind or just want to say hello? We'd love to hear from you. Reach out to us anytime!
                 </p>
 
                 {/* 4 Contact Information Rows */}
@@ -182,10 +182,10 @@ export const Contact = ({ onOpenGetStarted }) => {
                         Call Us
                       </div>
                       <a 
-                        href="tel:+919876543210" 
+                        href="tel:+917806888047" 
                         style={{ color: '#64748b', fontSize: '0.86rem', textDecoration: 'none' }}
                       >
-                        +91 98765 43210
+                        +91 7806888047
                       </a>
                     </div>
                   </div>
@@ -213,10 +213,10 @@ export const Contact = ({ onOpenGetStarted }) => {
                         Email Us
                       </div>
                       <a 
-                        href="mailto:hello@creativate.in" 
+                        href="mailto:info@avinzcreatives.in" 
                         style={{ color: '#64748b', fontSize: '0.86rem', textDecoration: 'none' }}
                       >
-                        hello@creativate.in
+                        info@avinzcreatives.in
                       </a>
                     </div>
                   </div>
@@ -451,10 +451,7 @@ export const Contact = ({ onOpenGetStarted }) => {
                           }}
                         >
                           <option value="">I'm Interested In</option>
-                          <option value="UI/UX Design">UI/UX Design</option>
-                          <option value="MERN Stack Development">MERN Stack Development</option>
-                          <option value="Full Stack Development">Full Stack Development</option>
-                          <option value="Data Analytics">Data Analytics</option>
+                          <option value="Website Design & Development">Website Design & Development</option>
                           <option value="Website Design & Development">Website Design & Development</option>
                           <option value="Brand Identity Design">Brand Identity Design</option>
                           <option value="Custom Project / Other">Custom Project / Other</option>

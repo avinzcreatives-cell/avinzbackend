@@ -13,18 +13,18 @@ import {
 export const About = ({ onOpenGetStarted }) => {
   const whyChooseUsAbout = [
     { title: "Industry Experts", icon: "bi-person-gear" },
-    { title: "Hands-on Learning", icon: "bi-laptop" },
-    { title: "Real-world Projects", icon: "bi-folder-check" },
-    { title: "Portfolio Development", icon: "bi-palette2" },
-    { title: "Career Support", icon: "bi-headset" },
-    { title: "Affordable Solutions", icon: "bi-tag-fill" }
+    { title: "Custom Solutions", icon: "bi-laptop" },
+    { title: "Modern Design", icon: "bi-palette2" },
+    { title: "Timely Delivery", icon: "bi-clock-history" },
+    { title: "Dedicated Support", icon: "bi-headset" },
+    { title: "Affordable Pricing", icon: "bi-tag-fill" }
   ];
 
   return (
     <>
       <SEO
-        title="About Us | Creative Design & Tech Training Institute"
-        description="Learn about Avinz Creatives - our mission, vision, core values, expert team, and commitment to empowering students and businesses through creative design and tech education."
+        title="About Us | Creative Design Agency"
+        description="Learn about Avinz Creatives - our mission, vision, core values, expert team, and commitment to empowering businesses through creative design and tech solutions."
       />
 
       {/* ====================================================================
@@ -38,12 +38,12 @@ export const About = ({ onOpenGetStarted }) => {
               <span className="section-badge">ABOUT US</span>
               <h1 className="hero-title mt-2">
                 We Create. We Develop.<br />
-                We Train. <span className="text-gradient-blue">We Empower.</span>
+                We Innovate. <span className="text-gradient-blue">We Empower.</span>
               </h1>
               <div className="heading-underline"></div>
 
               <p className="hero-subtitle mb-4">
-                We are a creative design and technology training institute dedicated to delivering innovative digital solutions and industry-focused education that helps businesses grow and students build successful careers.
+                We are a creative design agency dedicated to delivering innovative digital solutions that help businesses grow and succeed.
               </p>
 
               {/* 3 Checkmark Bullet Points */}
@@ -58,13 +58,13 @@ export const About = ({ onOpenGetStarted }) => {
                   <span className="badge rounded-circle bg-primary-subtle text-primary p-2">
                     <i className="bi bi-check2-circle fs-6"></i>
                   </span>
-                  <span className="fw-semibold text-dark">Industry-Focused Training for Students</span>
+                  <span className="fw-semibold text-dark">Innovative & Custom Solutions</span>
                 </div>
                 <div className="d-flex align-items-center gap-3">
                   <span className="badge rounded-circle bg-primary-subtle text-primary p-2">
                     <i className="bi bi-check2-circle fs-6"></i>
                   </span>
-                  <span className="fw-semibold text-dark">Practical Learning, Real-World Impact.</span>
+                  <span className="fw-semibold text-dark">Real-World Impact & Growth.</span>
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ export const About = ({ onOpenGetStarted }) => {
                   </div>
                   <div>
                     <h6 className="fw-bold mb-0 text-dark" style={{ fontSize: '0.9rem' }}>Quality Services</h6>
-                    <span className="text-primary fw-semibold" style={{ fontSize: '0.8rem' }}>Industry-Focused Training</span>
+                    <span className="text-primary fw-semibold" style={{ fontSize: '0.8rem' }}>Innovative Solutions</span>
                   </div>
                 </div>
               </div>
@@ -108,10 +108,10 @@ export const About = ({ onOpenGetStarted }) => {
           <div className="text-center mb-5">
             <span className="section-badge">WHAT WE DO</span>
             <h2 className="display-6 fw-bold mb-2">
-              Creative Solutions & <span className="text-gradient-blue">SMART</span> Training
+              Creative <span className="text-gradient-blue">Solutions</span>
             </h2>
             <p className="text-muted" style={{ maxWidth: '620px', margin: '0 auto' }}>
-              We combine creativity, technology and teaching to deliver the best results.
+              We combine creativity and technology to deliver the best results.
             </p>
             <div className="heading-underline center"></div>
           </div>
@@ -213,14 +213,14 @@ export const About = ({ onOpenGetStarted }) => {
       </section>
 
       {/* ====================================================================
-          WHY STUDENTS & CLIENTS CHOOSE US (6 Pill Grid)
+          WHY CLIENTS CHOOSE US (6 Pill Grid)
           ==================================================================== */}
       <section className="py-5 bg-white">
         <div className="container py-4">
           <div className="text-center mb-5">
             <span className="section-badge">WHY CHOOSE US</span>
             <h2 className="display-6 fw-bold mb-2">
-              Why Students & Clients <span className="text-gradient-blue">Choose Us</span>
+              Why Clients <span className="text-gradient-blue">Choose Us</span>
             </h2>
             <div className="heading-underline center"></div>
           </div>
@@ -252,10 +252,10 @@ export const About = ({ onOpenGetStarted }) => {
                 Passionate People. <span className="text-gradient-blue">Better Solutions.</span>
               </h2>
               <p className="text-muted mb-0" style={{ maxWidth: '580px' }}>
-                Our team of designers, developers and mentors work together to deliver creative solutions and quality education.
+                Our team of designers and developers work together to deliver creative solutions.
               </p>
             </div>
-            <button onClick={() => onOpenGetStarted('enroll')} className="btn btn-avinz-outline mt-3 mt-md-0">
+            <button onClick={() => onOpenGetStarted('quote')} className="btn btn-avinz-outline mt-3 mt-md-0">
               Join With Us <i className="bi bi-arrow-right"></i>
             </button>
           </div>
@@ -287,9 +287,9 @@ export const About = ({ onOpenGetStarted }) => {
       {/* CTA BANNER */}
       <CTABanner
         title="Ready to Build Your Future?"
-        subtitle="Learn in-demand skills, work on real projects and kick-start your career with the right guidance."
-        primaryBtnText="Explore Courses"
-        primaryBtnLink="/courses"
+        subtitle="Get your dream project designed and developed by our experts."
+        primaryBtnText="Get a Quote"
+        primaryBtnLink="/contact"
         secondaryBtnText="Contact Us"
         secondaryBtnLink="/contact"
       />

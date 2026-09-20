@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import rateLimit from 'express-rate-limit';
 import mailRoutes from './routes/mailRoutes.js';
+import aiRoutes from './routes/aiRoutes.js';
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.use(limiter);
 
 // Routes
 app.use('/api', mailRoutes);
+app.use('/api/ai', aiRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
@@ -55,6 +57,7 @@ app.listen(PORT, () => {
   console.log(`==========================================`);
   console.log(`🚀 Avinz Creatives Server running on port ${PORT}`);
   console.log(`📡 Health Check: http://localhost:${PORT}/api/health`);
-  console.log(`✉️ Email Endpoints: /api/contact, /api/quote, /api/enroll`);
+  console.log(`✉️ Email Endpoints: /api/contact, /api/quote`);
+  console.log(`🤖 AI Endpoint: /api/ai/chat`);
   console.log(`==========================================`);
 });

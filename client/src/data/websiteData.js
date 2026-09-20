@@ -5,14 +5,14 @@
 
 export const COMPANY_INFO = {
   name: "Avinz Creatives",
-  tagline: "Design. Develop. Learn. Grow.",
-  subtitle: "Creative Design Agency & Technology Training Institute",
-  shortDesc: "We create digital experiences, build web solutions and train the next generation of tech professionals.",
-  address: "142/B, Crosscut Road, Gandhipuram, Coimbatore, Tamil Nadu 641012, India",
+  tagline: "Creative Design & Web Solutions.",
+  subtitle: "Professional Creative Design Agency",
+  shortDesc: "We create digital experiences, build modern web solutions, and design high-quality graphics for businesses.",
+  address: "Gandhipuram, Coimbatore, Tamil Nadu",
   city: "Coimbatore, Tamil Nadu, India",
-  phone: "+91 98765 43210",
-  whatsapp: "+919876543210",
-  email: "hello@avinzcreatives.in",
+  phone: "7806888047",
+  whatsapp: "917806888047",
+  email: "info@avinzcreatives.in",
   website: "www.avinzcreatives.in",
   workingHours: "Monday - Saturday: 9:00 AM - 7:30 PM",
   socials: {
@@ -25,10 +25,10 @@ export const COMPANY_INFO = {
 };
 
 export const STATS_DATA = [
-  { id: "students", value: "100+", label: "Students Trained", icon: "bi-people-fill", desc: "Trained across MERN, UI/UX, and Data Tech" },
+  { id: "students", value: "100+", label: "Happy Clients", icon: "bi-people-fill", desc: "Trusted by local and global businesses" },
   { id: "projects", value: "50+", label: "Projects Completed", icon: "bi-briefcase-fill", desc: "Delivered for global clients & startups" },
   { id: "websites", value: "25+", label: "Websites Developed", icon: "bi-globe", desc: "High-performance responsive web applications" },
-  { id: "practical", value: "100%", label: "Practical Learning", icon: "bi-star-fill", desc: "Real-world project-driven curriculum" },
+  { id: "practical", value: "100%", label: "Client Satisfaction", icon: "bi-star-fill", desc: "Top-notch quality in every design" },
 ];
 
 export const CORE_SERVICES_SUMMARY = [
@@ -65,54 +65,54 @@ export const CORE_SERVICES_SUMMARY = [
     linkUrl: "/services"
   },
   {
-    id: "training-programs",
-    title: "Training Programs",
-    icon: "bi-mortarboard-fill",
+    id: "branding",
+    title: "Branding & Print Design",
+    icon: "bi-printer-fill",
     badgeColor: "#f3e8ff",
     iconColor: "#9333ea",
     features: [
-      "UI/UX Design",
-      "MERN Stack Development",
-      "Full Stack Development",
-      "Data Analytics",
-      "Machine Learning",
-      "DevOps",
-      "Digital Marketing"
+      "Cafe Menu Card Design",
+      "Restaurant Menu Design",
+      "Food Posters",
+      "Business Cards",
+      "Promotional Posters",
+      "Brochures & Flyers",
+      "Stationery Design"
     ],
-    linkText: "View All Courses",
-    linkUrl: "/courses"
+    linkText: "View All Services",
+    linkUrl: "/services"
   }
 ];
 
 export const WHY_CHOOSE_US_HOME = [
   {
     id: 1,
-    title: "Expert Mentors",
-    desc: "Industry-experienced trainers & designers",
+    title: "Expert Designers",
+    desc: "Industry-experienced creative professionals.",
     icon: "bi-person-badge-fill"
   },
   {
     id: 2,
-    title: "Hands-on Learning",
-    desc: "Practical projects for real-world experience.",
+    title: "Custom Solutions",
+    desc: "Tailored designs matching your brand vision.",
     icon: "bi-puzzle-fill"
   },
   {
     id: 3,
-    title: "Portfolio Ready",
-    desc: "Build a strong portfolio that gets you noticed.",
+    title: "High Quality",
+    desc: "Pixel-perfect, modern and professional outputs.",
     icon: "bi-folder-check"
   },
   {
     id: 4,
-    title: "Career Support",
-    desc: "Placement assistance & career guidance.",
+    title: "Dedicated Support",
+    desc: "Clear communication and prompt assistance.",
     icon: "bi-headset"
   },
   {
     id: 5,
     title: "Affordable Pricing",
-    desc: "High-quality services and training at best prices.",
+    desc: "High-quality services at competitive prices.",
     icon: "bi-tag-fill"
   }
 ];
@@ -189,19 +189,19 @@ export const ALL_SERVICES = [
     tools: ["React.js", "JavaScript ES6+", "WordPress", "WooCommerce", "Next.js"]
   },
   {
-    id: "mern-stack",
-    title: "MERN Stack Development",
-    icon: "bi-layers-fill",
-    category: "Full Stack",
-    desc: "Scalable full-stack web applications and robust cloud microservices powered by MongoDB, Express, React, and Node.js.",
+    id: "print-design",
+    title: "Print & Menu Design",
+    icon: "bi-printer-fill",
+    category: "Print",
+    desc: "High-quality print ready designs including cafe menus, restaurant cards, and food posters.",
     items: [
-      "MongoDB Database Design",
-      "Express.js & Node.js Backend",
-      "React.js Interactive Frontends",
-      "RESTful API & JWT Auth",
-      "Full Stack Web Applications"
+      "Cafe Menu Card Design",
+      "Restaurant Menu Design",
+      "Food Posters",
+      "Promotional Posters",
+      "Business Cards"
     ],
-    tools: ["MongoDB", "Express", "React", "Node.js", "Redux", "Docker"]
+    tools: ["Adobe Photoshop", "Illustrator", "InDesign", "CorelDRAW"]
   }
 ];
 
@@ -213,149 +213,6 @@ export const WORK_PROCESS = [
   { step: "05", title: "Deliver", desc: "We deploy the final product on time with documentation, training, and ongoing support." }
 ];
 
-// ============================================================================
-// 8 COURSES FROM THE COURSES PAGE MOCKUP
-// ============================================================================
-export const COURSES_PAGE_DATA = [
-  {
-    id: "ui-ux-design",
-    title: "UI/UX Design",
-    icon: "bi-pen-fill",
-    iconColor: "#2563eb",
-    iconBg: "#eff6ff",
-    desc: "Design user-friendly, modern and engaging digital experiences.",
-    items: [
-      "UI/UX Fundamentals",
-      "Wireframing & Prototyping",
-      "User Research",
-      "Figma & Design Systems"
-    ],
-    duration: "2.5 Months",
-    level: "Beginner"
-  },
-  {
-    id: "mern-stack",
-    title: "MERN Stack Development",
-    icon: "bi-code-slash",
-    iconColor: "#10b981",
-    iconBg: "#ecfdf5",
-    desc: "Build dynamic full-stack web applications with MERN.",
-    items: [
-      "MongoDB",
-      "Express.js",
-      "React.js",
-      "Node.js"
-    ],
-    duration: "4 Months",
-    level: "Intermediate"
-  },
-  {
-    id: "full-stack",
-    title: "Full Stack Development",
-    icon: "bi-stack",
-    iconColor: "#f59e0b",
-    iconBg: "#fffbeb",
-    desc: "Learn front-end and back-end development from scratch.",
-    items: [
-      "HTML, CSS, JavaScript",
-      "React.js",
-      "Node.js & Express.js",
-      "SQL & Database"
-    ],
-    duration: "5 Months",
-    level: "Beginner"
-  },
-  {
-    id: "data-analytics",
-    title: "Data Analytics",
-    icon: "bi-bar-chart-fill",
-    iconColor: "#ec4899",
-    iconBg: "#fdf2f8",
-    desc: "Analyze data and make smart business decisions.",
-    items: [
-      "Excel for Analytics",
-      "SQL",
-      "Power BI",
-      "Data Visualization"
-    ],
-    duration: "2.5 Months",
-    level: "Beginner"
-  },
-  {
-    id: "machine-learning",
-    title: "Machine Learning",
-    icon: "bi-cpu-fill",
-    iconColor: "#06b6d4",
-    iconBg: "#ecfeff",
-    desc: "Build machine learning models and solve real-world problems.",
-    items: [
-      "Python Basics",
-      "ML Algorithms",
-      "Model Training",
-      "Scikit-Learn Projects"
-    ],
-    duration: "3.5 Months",
-    level: "Intermediate"
-  },
-  {
-    id: "devops",
-    title: "DevOps",
-    icon: "bi-cloud-arrow-up-fill",
-    iconColor: "#8b5cf6",
-    iconBg: "#f5f3ff",
-    desc: "Learn CI/CD, cloud, and automation tools for modern development.",
-    items: [
-      "Linux Basics",
-      "Docker",
-      "Jenkins",
-      "AWS Basics"
-    ],
-    duration: "3 Months",
-    level: "Intermediate"
-  },
-  {
-    id: "digital-marketing",
-    title: "Digital Marketing",
-    icon: "bi-megaphone-fill",
-    iconColor: "#3b82f6",
-    iconBg: "#eff6ff",
-    desc: "Master digital marketing strategies to grow brands online.",
-    items: [
-      "SEO",
-      "Social Media Marketing",
-      "Google Ads",
-      "Analytics & Reporting"
-    ],
-    duration: "2 Months",
-    level: "Beginner"
-  },
-  {
-    id: "soft-skills",
-    title: "Soft Skills & Interview Prep",
-    icon: "bi-star-fill",
-    iconColor: "#eab308",
-    iconBg: "#fefce8",
-    desc: "Build confidence and get ready for your dream job.",
-    items: [
-      "Communication Skills",
-      "Resume Building",
-      "Interview Techniques",
-      "Personality Development"
-    ],
-    duration: "1 Month",
-    level: "Beginner"
-  }
-];
-
-export const COURSES_ADVANTAGES = [
-  { title: "Industry Experts", desc: "Learn from professionals with real-world experience.", icon: "bi-person-badge-fill" },
-  { title: "Practical Projects", desc: "Work on live projects and build your portfolio.", icon: "bi-puzzle-fill" },
-  { title: "Job-Ready Skills", desc: "Gain skills that companies are actually looking for.", icon: "bi-folder-check" },
-  { title: "Placement Support", desc: "Get placement assistance and career guidance.", icon: "bi-headset" },
-  { title: "Flexible Learning", desc: "Weekend & weekday batches available.", icon: "bi-star-fill" }
-];
-
-export const COURSES_DATA = COURSES_PAGE_DATA;
 
 // ============================================================================
 // 8 PROJECTS FROM THE PROJECTS PAGE MOCKUP
@@ -440,51 +297,69 @@ export const RECENT_PROJECTS = PROJECTS_PAGE_DATA;
 export const TESTIMONIALS = [
   {
     id: 1,
-    name: "Priya Dharshini",
-    role: "UI/UX Designer",
-    company: "Placed at Zoho Corp",
-    rating: 5,
+    name: "Sample Review 1",
+    role: "Cafe Owner",
+    company: "",
+    rating: 0,
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
-    quote: "The UI/UX training was super practical. I built real projects and got placed as a UI Designer within 2 months!"
+    quote: "Avinz Creatives designed our cafe menu and the final output looked clean and professional. The pricing was also affordable."
   },
   {
     id: 2,
-    name: "Kavin Raj",
-    role: "Full Stack Developer",
-    company: "Placed at Cognizant",
-    rating: 5,
+    name: "Sample Review 2",
+    role: "Restaurant Owner",
+    company: "",
+    rating: 0,
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-    quote: "The MERN Stack course is very beginner friendly and the mentors are awesome. Highly recommended!"
+    quote: "Got our restaurant menu redesigned and the final design came out neat and easy to read. They understood our requirements well."
   },
   {
     id: 3,
-    name: "Sneha M",
-    role: "Data Analyst",
-    company: "Placed at Infosys",
-    rating: 5,
+    name: "Sample Review 3",
+    role: "Small Business Owner",
+    company: "",
+    rating: 0,
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
-    quote: "I learned Data Analytics from scratch and now I'm working on real-time data projects with confidence!"
+    quote: "We needed promotional creatives for our business. The designs were simple, attractive and matched what we had in mind."
+  },
+  {
+    id: 4,
+    name: "Sample Review 4",
+    role: "Business Owner",
+    company: "",
+    rating: 0,
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80",
+    quote: "Got a logo and a few branding creatives designed for our business. The overall design was clean and professional."
+  },
+  {
+    id: 5,
+    name: "Sample Review 5",
+    role: "Local Business Owner",
+    company: "",
+    rating: 0,
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80",
+    quote: "Avinz Creatives helped us with social media creatives for our business. Good design quality and reasonable pricing."
   }
 ];
 
 export const TEAM_MEMBERS = [
   { id: 1, name: "Arun V.", role: "Founder & Creative Lead", experience: "8+ Years Exp", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" },
   { id: 2, name: "Karthik R.", role: "Lead Full Stack Architect", experience: "7+ Years Exp", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" },
-  { id: 3, name: "Deepa S.", role: "Senior UI/UX Designer & Mentor", experience: "6+ Years Exp", avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" },
-  { id: 4, name: "Sanjay N.", role: "MERN Stack Specialist & Trainer", experience: "5+ Years Exp", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" },
-  { id: 5, name: "Meera P.", role: "Data Science & AI Mentor", experience: "5+ Years Exp", avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" },
+  { id: 3, name: "Deepa S.", role: "Senior UI/UX Designer", experience: "6+ Years Exp", avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" },
+  { id: 4, name: "Sanjay N.", role: "Web Developer", experience: "5+ Years Exp", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" },
+  { id: 5, name: "Meera P.", role: "Graphic Designer", experience: "5+ Years Exp", avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" },
   { id: 6, name: "Vignesh M.", role: "Brand Strategist & Visual Designer", experience: "6+ Years Exp", avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" }
 ];
 
 export const PURPOSE_CARDS = [
-  { id: "mission", title: "Our Mission", desc: "To deliver creative digital solutions and practical training that inspire growth and create opportunities.", icon: "bi-bullseye" },
-  { id: "vision", title: "Our Vision", desc: "To become a trusted global brand in design services and technology education.", icon: "bi-eye-fill" },
-  { id: "promise", title: "Our Promise", desc: "Your success is our goal. We are with you from learning to career growth.", icon: "bi-heart-fill" }
+  { id: "mission", title: "Our Mission", desc: "To deliver creative digital solutions and high-quality designs that inspire growth and elevate brands.", icon: "bi-bullseye" },
+  { id: "vision", title: "Our Vision", desc: "To become a trusted global brand in design services.", icon: "bi-eye-fill" },
+  { id: "promise", title: "Our Promise", desc: "Your success is our goal. We partner with you to achieve your business objectives.", icon: "bi-heart-fill" }
 ];
 
 export const CORE_VALUES = [
   { id: "creativity", title: "Creativity", desc: "We believe in original ideas and modern design that create strong brand identity.", icon: "bi-lightbulb-fill" },
   { id: "quality", title: "Quality", desc: "We deliver work with excellence, clean code, and meticulous attention to detail.", icon: "bi-shield-fill-check" },
-  { id: "learning", title: "Learning", desc: "We promote continuous learning, practical projects, and real-world skills.", icon: "bi-book-half" },
-  { id: "integrity", title: "Integrity", desc: "We value honesty, transparency, and trust in all our client and student relationships.", icon: "bi-award-fill" }
+  { id: "learning", title: "Collaboration", desc: "We work closely with clients to ensure their vision is realized perfectly.", icon: "bi-people-fill" },
+  { id: "integrity", title: "Integrity", desc: "We value honesty, transparency, and trust in all our client relationships.", icon: "bi-award-fill" }
 ];

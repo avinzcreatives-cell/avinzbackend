@@ -26,9 +26,6 @@ export const GetStartedModal = ({ isOpen, onClose }) => {
   const servicesListCol1 = ['Logo Design', 'Brand Identity', 'Graphic Design', 'Social Media Design', 'UI/UX Design'];
   const servicesListCol2 = ['Website Design', 'Website Development', 'Landing Page Design', 'Portfolio Website', 'Business Website'];
 
-  const coursesListCol1 = ['UI/UX Design', 'MERN Stack Development', 'Full Stack Development', 'Data Analytics'];
-  const coursesListCol2 = ['Machine Learning', 'DevOps', 'Digital Marketing'];
-
   const handleCheckboxChange = (type, item) => {
     setFormData((prev) => {
       const currentList = prev[type];
@@ -60,8 +57,8 @@ export const GetStartedModal = ({ isOpen, onClose }) => {
         email: formData.email,
         phone: formData.phone,
         city: formData.city,
-        subject: `[Get Started Enquiry] ${formData.services.join(', ') || formData.courses.join(', ') || 'General'}`,
-        message: `City: ${formData.city}\nServices: ${formData.services.join(', ') || 'None'}\nCourses: ${formData.courses.join(', ') || 'None'}\nPreferred Contact: ${formData.contactMethod}\nBudget: ${formData.budget || 'N/A'}\nPreferred Date: ${formData.startDate || 'N/A'}\n\nRequirement:\n${formData.requirement}`
+        subject: `[Get Started Enquiry] ${formData.services.join(', ') || 'General'}`,
+        message: `City: ${formData.city}\nServices: ${formData.services.join(', ') || 'None'}\nPreferred Contact: ${formData.contactMethod}\nBudget: ${formData.budget || 'N/A'}\nPreferred Date: ${formData.startDate || 'N/A'}\n\nRequirement:\n${formData.requirement}`
       };
 
       const res = await sendContactMessage(payload);
@@ -139,7 +136,7 @@ export const GetStartedModal = ({ isOpen, onClose }) => {
                 <div style={{ width: '40px', height: '3px', background: '#2563eb', borderRadius: '2px', margin: '14px 0 20px' }}></div>
 
                 <p className="text-secondary small" style={{ lineHeight: 1.7, fontSize: '0.86rem' }}>
-                  Whether you’re looking for professional design services or want to join one of our career-focused courses, we’re here to help you take the next step.
+                  Whether you’re looking for professional design services or need custom web solutions, we’re here to help you take the next step.
                 </p>
               </div>
 
@@ -299,51 +296,6 @@ export const GetStartedModal = ({ isOpen, onClose }) => {
                           </div>
                         </div>
 
-                        {/* Courses Card */}
-                        <div className="col-md-6">
-                          <div className="p-3 rounded-3 border bg-white h-100 shadow-2xs" style={{ borderColor: '#e2e8f0' }}>
-                            <div className="d-flex align-items-center gap-2 mb-2">
-                              <span className="badge bg-primary rounded-circle p-1" style={{ width: '22px', height: '22px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <i className="bi bi-mortarboard-fill text-white" style={{ fontSize: '11px' }}></i>
-                              </span>
-                              <span className="fw-bold text-dark small" style={{ fontSize: '0.85rem' }}>Courses</span>
-                            </div>
-                            <div className="row g-1">
-                              <div className="col-6">
-                                {coursesListCol1.map((crs) => (
-                                  <div key={crs} className="form-check small mb-1">
-                                    <input
-                                      className="form-check-input"
-                                      type="checkbox"
-                                      id={`mod-crs-${crs}`}
-                                      checked={formData.courses.includes(crs)}
-                                      onChange={() => handleCheckboxChange('courses', crs)}
-                                    />
-                                    <label className="form-check-label text-secondary" htmlFor={`mod-crs-${crs}`} style={{ fontSize: '0.74rem' }}>
-                                      {crs}
-                                    </label>
-                                  </div>
-                                ))}
-                              </div>
-                              <div className="col-6">
-                                {coursesListCol2.map((crs) => (
-                                  <div key={crs} className="form-check small mb-1">
-                                    <input
-                                      className="form-check-input"
-                                      type="checkbox"
-                                      id={`mod-crs-${crs}`}
-                                      checked={formData.courses.includes(crs)}
-                                      onChange={() => handleCheckboxChange('courses', crs)}
-                                    />
-                                    <label className="form-check-label text-secondary" htmlFor={`mod-crs-${crs}`} style={{ fontSize: '0.74rem' }}>
-                                      {crs}
-                                    </label>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
 

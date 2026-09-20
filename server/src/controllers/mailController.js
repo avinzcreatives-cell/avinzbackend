@@ -64,7 +64,7 @@ export const handleContact = async (req, res) => {
     }
 
     const mailer = await getTransporter();
-    const adminEmail = process.env.ADMIN_EMAIL || 'hello@avinzcreatives.in';
+    const adminEmail = process.env.CONTACT_EMAIL || 'avinzcreatives@gmail.com';
 
     // 1. Send Notification to Admin
     const adminMailOptions = {
@@ -83,7 +83,7 @@ export const handleContact = async (req, res) => {
 
     // 2. Send Auto-confirmation to User (Non-blocking)
     mailer.sendMail({
-      from: `"Avinz Creatives" <${process.env.SMTP_USER || 'hello@avinzcreatives.in'}>`,
+      from: `"Avinz Creatives" <${process.env.SMTP_USER || 'avinzcreatives@gmail.com'}>`,
       to: email,
       subject: `We've received your message - Avinz Creatives`,
       html: getUserConfirmationTemplate({ name, type: 'contact' }),
@@ -98,7 +98,7 @@ export const handleContact = async (req, res) => {
     console.error('[handleContact Error]', error);
     return res.status(500).json({
       success: false,
-      message: 'Failed to send message. Please try again or reach out directly at hello@avinzcreatives.in.',
+      message: 'Failed to send message. Please try again or reach out directly at avinzcreatives@gmail.com.',
       error: error.message,
     });
   }
@@ -116,7 +116,7 @@ export const handleQuote = async (req, res) => {
     }
 
     const mailer = await getTransporter();
-    const adminEmail = process.env.ADMIN_EMAIL || 'hello@avinzcreatives.in';
+    const adminEmail = process.env.CONTACT_EMAIL || 'avinzcreatives@gmail.com';
 
     const adminMailOptions = {
       from: `"Avinz Creatives Quotes" <${process.env.SMTP_USER || 'noreply@avinzcreatives.in'}>`,
@@ -134,7 +134,7 @@ export const handleQuote = async (req, res) => {
 
     // Confirmation to client
     mailer.sendMail({
-      from: `"Avinz Creatives" <${process.env.SMTP_USER || 'hello@avinzcreatives.in'}>`,
+      from: `"Avinz Creatives" <${process.env.SMTP_USER || 'avinzcreatives@gmail.com'}>`,
       to: email,
       subject: `Your Project Quote Request - Avinz Creatives`,
       html: getUserConfirmationTemplate({ name, type: 'quote' }),
@@ -155,53 +155,3 @@ export const handleQuote = async (req, res) => {
   }
 };
 
-/**
- * Handle Course Enrollment Application
- */
-export const handleEnrollment = async (req, res) => {
-  try {
-    const { name, email, phone, course, mode, experience, message } = req.body;
-
-    if (!name || !email || !phone || !course) {
-      return res.status(400).json({ success: false, message: 'Please fill all required enrollment fields.' });
-    }
-
-    const mailer = await getTransporter();
-    const adminEmail = process.env.ADMIN_EMAIL || 'hello@avinzcreatives.in';
-
-    const adminMailOptions = {
-      from: `"Avinz Academy Enrollment" <${process.env.SMTP_USER || 'noreply@avinzcreatives.in'}>`,
-      to: adminEmail,
-      replyTo: email,
-      subject: `[Course Enrollment] ${course} - ${name}`,
-      html: getAdminNotificationTemplate({
-        type: 'enroll',
-        data: { name, email, phone, course, mode, experience, message },
-      }),
-    };
-
-    const info = await mailer.sendMail(adminMailOptions);
-    const previewUrl = nodemailer.getTestMessageUrl ? nodemailer.getTestMessageUrl(info) : null;
-
-    // Student confirmation
-    mailer.sendMail({
-      from: `"Avinz Creatives Academy" <${process.env.SMTP_USER || 'hello@avinzcreatives.in'}>`,
-      to: email,
-      subject: `Enrollment Received: ${course} - Avinz Creatives`,
-      html: getUserConfirmationTemplate({ name, type: 'enroll', item: course }),
-    }).catch(err => console.error('[Email Auto-Reply Error]', err.message));
-
-    return res.status(200).json({
-      success: true,
-      message: `Enrollment submitted for ${course}! Our academy counselor will call you to confirm your batch.`,
-      previewUrl,
-    });
-  } catch (error) {
-    console.error('[handleEnrollment Error]', error);
-    return res.status(500).json({
-      success: false,
-      message: 'Failed to submit enrollment. Please try again.',
-      error: error.message,
-    });
-  }
-};

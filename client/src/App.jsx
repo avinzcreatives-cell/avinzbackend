@@ -3,12 +3,13 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import GetStartedModal from './components/Modals/GetStartedModal';
+import AvinzAI from './components/AvinzAI';
+import WhatsAppButton from './components/WhatsAppButton';
 
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-import Courses from './pages/Courses';
 import Projects from './pages/Projects';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
@@ -25,11 +26,11 @@ const ScrollToTop = () => {
 export const App = () => {
   const [modalState, setModalState] = useState({
     isOpen: false,
-    tab: 'enroll',
+    tab: 'quote',
     preselected: ''
   });
 
-  const handleOpenGetStarted = (tab = 'enroll', preselected = '') => {
+  const handleOpenGetStarted = (tab = 'quote', preselected = '') => {
     setModalState({
       isOpen: true,
       tab,
@@ -46,7 +47,7 @@ export const App = () => {
       <ScrollToTop />
       
       {/* Top Navigation */}
-      <Navbar onOpenGetStarted={() => handleOpenGetStarted('enroll')} />
+      <Navbar onOpenGetStarted={() => handleOpenGetStarted('quote')} />
 
       {/* Main Routed Content */}
       <main className="flex-grow-1">
@@ -54,7 +55,6 @@ export const App = () => {
           <Route path="/" element={<Home onOpenGetStarted={handleOpenGetStarted} />} />
           <Route path="/about" element={<About onOpenGetStarted={handleOpenGetStarted} />} />
           <Route path="/services" element={<Services onOpenGetStarted={handleOpenGetStarted} />} />
-          <Route path="/courses" element={<Courses onOpenGetStarted={handleOpenGetStarted} />} />
           <Route path="/projects" element={<Projects onOpenGetStarted={handleOpenGetStarted} />} />
           <Route path="/testimonials" element={<Testimonials onOpenGetStarted={handleOpenGetStarted} />} />
           <Route path="/contact" element={<Contact onOpenGetStarted={handleOpenGetStarted} />} />
@@ -73,6 +73,12 @@ export const App = () => {
         defaultTab={modalState.tab}
         preselectedItem={modalState.preselected}
       />
+
+      {/* Floating AI Chat Assistant */}
+      <AvinzAI />
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
 };
