@@ -9,7 +9,7 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'https://avinzbackend-2.onrender.com',
+        target: 'https://avinzbackend-5.onrender.com',
         changeOrigin: true,
         secure: false,
       }
