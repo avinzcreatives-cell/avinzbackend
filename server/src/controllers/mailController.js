@@ -10,18 +10,30 @@ const getTransporter = async () => {
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_SECURE } = process.env;
 
   if (SMTP_USER && SMTP_PASS) {
-    transporter = nodemailer.createTransport({
-      host: SMTP_HOST || 'smtp.gmail.com',
-      port: Number(SMTP_PORT) || 587,
-      secure: SMTP_SECURE === 'true',
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
-      },
-    });
-    console.log(`[Email] Configured custom SMTP with host: ${SMTP_HOST || 'smtp.gmail.com'}`);
+    const isGmail = (SMTP_HOST && SMTP_HOST.includes('gmail')) || (SMTP_USER && SMTP_USER.includes('@gmail.com'));
+    
+    if (isGmail) {
+      transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: SMTP_USER,
+          pass: SMTP_PASS,
+        },
+      });
+      console.log(`[Email] Configured Gmail transport for: ${SMTP_USER}`);
+    } else {
+      transporter = nodemailer.createTransport({
+        host: SMTP_HOST,
+        port: Number(SMTP_PORT) || 587,
+        secure: SMTP_SECURE === 'true',
+        auth: {
+          user: SMTP_USER,
+          pass: SMTP_PASS,
+        },
+      });
+      console.log(`[Email] Configured custom SMTP with host: ${SMTP_HOST}`);
+    }
   } else {
-    // Fallback Ethereal test account for local testing & development
     try {
       const testAccount = await nodemailer.createTestAccount();
       transporter = nodemailer.createTransport({
@@ -57,37 +69,42 @@ const getTransporter = async () => {
  */
 export const handleContact = async (req, res) => {
   try {
-    const { name, email, phone, subject, message } = req.body;
+    const { name, email, phone, city, subject, message } = req.body;
 
     if (!name || !email || !message) {
       return res.status(400).json({ success: false, message: 'Please provide name, email, and message.' });
     }
 
     const mailer = await getTransporter();
-    const adminEmail = process.env.CONTACT_EMAIL || 'avinzcreatives@gmail.com';
+    const adminEmail = process.env.ADMIN_EMAIL || process.env.CONTACT_EMAIL || 'avinzcreatives@gmail.com';
+    const smtpFrom = process.env.SMTP_USER || 'avinzcreatives@gmail.com';
 
     // 1. Send Notification to Admin
     const adminMailOptions = {
-      from: `"Avinz Creatives Website" <${process.env.SMTP_USER || 'noreply@avinzcreatives.in'}>`,
+      from: `"Avinz Creatives Website" <${smtpFrom}>`,
       to: adminEmail,
       replyTo: email,
       subject: `[Contact Form] ${subject || 'New Message'} - from ${name}`,
       html: getAdminNotificationTemplate({
         type: 'contact',
-        data: { name, email, phone, subject, message },
+        data: { name, email, phone, city, subject, message },
       }),
     };
 
     const info = await mailer.sendMail(adminMailOptions);
     const previewUrl = nodemailer.getTestMessageUrl ? nodemailer.getTestMessageUrl(info) : null;
 
-    // 2. Send Auto-confirmation to User (Non-blocking)
-    mailer.sendMail({
-      from: `"Avinz Creatives" <${process.env.SMTP_USER || 'avinzcreatives@gmail.com'}>`,
-      to: email,
-      subject: `We've received your message - Avinz Creatives`,
-      html: getUserConfirmationTemplate({ name, type: 'contact' }),
-    }).catch(err => console.error('[Email Auto-Reply Error]', err.message));
+    // 2. Send Auto-confirmation to User
+    try {
+      await mailer.sendMail({
+        from: `"Avinz Creatives" <${smtpFrom}>`,
+        to: email,
+        subject: `We've received your message - Avinz Creatives`,
+        html: getUserConfirmationTemplate({ name, type: 'contact' }),
+      });
+    } catch (err) {
+      console.error('[Email Auto-Reply Warning]', err.message);
+    }
 
     return res.status(200).json({
       success: true,
@@ -98,7 +115,7 @@ export const handleContact = async (req, res) => {
     console.error('[handleContact Error]', error);
     return res.status(500).json({
       success: false,
-      message: 'Failed to send message. Please try again or reach out directly at avinzcreatives@gmail.com.',
+      message: 'Failed to send message. Please reach out directly at avinzcreatives@gmail.com or call 7806888047.',
       error: error.message,
     });
   }
@@ -109,23 +126,24 @@ export const handleContact = async (req, res) => {
  */
 export const handleQuote = async (req, res) => {
   try {
-    const { name, email, phone, services, budget, timeline, details } = req.body;
+    const { name, email, phone, services, service, budget, timeline, details, message } = req.body;
 
     if (!name || !email) {
       return res.status(400).json({ success: false, message: 'Name and email are required for a quote request.' });
     }
 
     const mailer = await getTransporter();
-    const adminEmail = process.env.CONTACT_EMAIL || 'avinzcreatives@gmail.com';
+    const adminEmail = process.env.ADMIN_EMAIL || process.env.CONTACT_EMAIL || 'avinzcreatives@gmail.com';
+    const smtpFrom = process.env.SMTP_USER || 'avinzcreatives@gmail.com';
 
     const adminMailOptions = {
-      from: `"Avinz Creatives Quotes" <${process.env.SMTP_USER || 'noreply@avinzcreatives.in'}>`,
+      from: `"Avinz Creatives Quotes" <${smtpFrom}>`,
       to: adminEmail,
       replyTo: email,
-      subject: `[Project Quote Request] from ${name} - ${services || 'Custom Project'}`,
+      subject: `[Project Quote Request] from ${name} - ${service || services || 'Custom Project'}`,
       html: getAdminNotificationTemplate({
         type: 'quote',
-        data: { name, email, phone, services, budget, timeline, details },
+        data: { name, email, phone, services: service || services, budget, timeline, details: details || message },
       }),
     };
 
@@ -133,12 +151,16 @@ export const handleQuote = async (req, res) => {
     const previewUrl = nodemailer.getTestMessageUrl ? nodemailer.getTestMessageUrl(info) : null;
 
     // Confirmation to client
-    mailer.sendMail({
-      from: `"Avinz Creatives" <${process.env.SMTP_USER || 'avinzcreatives@gmail.com'}>`,
-      to: email,
-      subject: `Your Project Quote Request - Avinz Creatives`,
-      html: getUserConfirmationTemplate({ name, type: 'quote' }),
-    }).catch(err => console.error('[Email Auto-Reply Error]', err.message));
+    try {
+      await mailer.sendMail({
+        from: `"Avinz Creatives" <${smtpFrom}>`,
+        to: email,
+        subject: `Your Project Quote Request - Avinz Creatives`,
+        html: getUserConfirmationTemplate({ name, type: 'quote' }),
+      });
+    } catch (err) {
+      console.error('[Email Auto-Reply Warning]', err.message);
+    }
 
     return res.status(200).json({
       success: true,
@@ -154,4 +176,3 @@ export const handleQuote = async (req, res) => {
     });
   }
 };
-
