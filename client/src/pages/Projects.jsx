@@ -50,7 +50,7 @@ export const Projects = ({ onOpenGetStarted }) => {
 
               <h1 className="hero-title fw-bold" style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.4rem)', lineHeight: 1.18, color: '#09132e' }}>
                 Ideas. Designed.<br />
-                Built. <span style={{ color: '#2563eb' }}>Delivered.</span>
+                Built. <span style={{ color: '#110A5C' }}>Delivered.</span>
               </h1>
 
               <p className="text-secondary mb-4" style={{ fontSize: '1.02rem', lineHeight: 1.75, maxWidth: '520px' }}>
@@ -211,7 +211,7 @@ export const Projects = ({ onOpenGetStarted }) => {
               <h3 className="fw-bold text-dark mb-1" style={{ fontSize: '1.5rem' }}>
                 What Our Clients Say
               </h3>
-              <div style={{ width: '40px', height: '3px', background: '#2563eb', borderRadius: '2px', marginTop: '8px' }}></div>
+              <div style={{ width: '40px', height: '3px', background: '#110A5C', borderRadius: '2px', marginTop: '8px' }}></div>
             </div>
 
             <div className="col-lg-9">
@@ -225,7 +225,7 @@ export const Projects = ({ onOpenGetStarted }) => {
                       </p>
                       {/* Pagination Dots */}
                       <div className="d-flex gap-1">
-                        <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#2563eb' }}></span>
+                        <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#110A5C' }}></span>
                         <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#cbd5e1' }}></span>
                         <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#cbd5e1' }}></span>
                         <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#cbd5e1' }}></span>
@@ -260,7 +260,7 @@ export const Projects = ({ onOpenGetStarted }) => {
         <div className="container">
           <div 
             className="rounded-4 p-4 p-md-5 text-white position-relative overflow-hidden shadow-lg"
-            style={{ background: 'linear-gradient(135deg, #091747 0%, #102a83 50%, #1e40af 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #110A5C 0%, #110A5C 50%, #110A5C 100%)' }}
           >
             <div className="row align-items-center g-4">
               <div className="col-lg-8">

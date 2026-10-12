@@ -36,8 +36,8 @@ export const CORE_SERVICES_SUMMARY = [
     id: "creative-design",
     title: "Creative Design",
     icon: "bi-palette2",
-    badgeColor: "#eff6ff",
-    iconColor: "#2563eb",
+    badgeColor: "var(--avinz-blue-50)",
+    iconColor: "#110A5C",
     features: [
       "Logo Design",
       "Brand Identity",

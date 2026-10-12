@@ -16,8 +16,8 @@ export const Home = ({ onOpenGetStarted }) => {
   // Using WHY_CHOOSE_US_HOME from websiteData.js for the cards
   const whyChooseUsCards = WHY_CHOOSE_US_HOME.map(item => ({
     ...item,
-    color: "#2563eb",
-    bg: "#eff6ff"
+    color: "#110A5C",
+    bg: "var(--avinz-blue-50)"
   }));
 
   // Exact 4 Projects matching the mockups
@@ -56,7 +56,7 @@ export const Home = ({ onOpenGetStarted }) => {
       category: "Business Website",
       desc: "Enterprise cloud DevOps platform featuring interactive interactive documentation, custom pricing calculator, and client dashboard.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80",
-      tags: ["MERN Stack", "Node.js", "Tailwind/Bootstrap", "SEO"]
+      tags: ["Web Application", "Node.js", "Tailwind/Bootstrap", "SEO"]
     }
   ];
 
@@ -77,13 +77,13 @@ export const Home = ({ onOpenGetStarted }) => {
           <div className="row align-items-center g-5">
             {/* Left Column: Headline & Value Proposition */}
             <div className="col-lg-6">
-              <span className="section-badge mb-3" style={{ background: '#eff6ff', color: '#2563eb', border: '1px solid #bfdbfe', padding: '6px 16px', borderRadius: '50px', fontSize: '0.82rem', fontWeight: '700' }}>
+              <span className="section-badge mb-3" style={{ background: 'var(--avinz-blue-50)', color: '#110A5C', border: '1px solid var(--avinz-blue-100)', padding: '6px 16px', borderRadius: '50px', fontSize: '0.82rem', fontWeight: '700' }}>
                 Creative Design Agency 🚀
               </span>
 
               <h1 className="hero-title mt-2 fw-bold" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', lineHeight: 1.15, color: '#09132e', letterSpacing: '-0.02em' }}>
                 Design. Develop.<br />
-                <span style={{ color: '#2563eb' }}>Launch.</span>
+                <span style={{ color: '#110A5C' }}>Launch.</span>
               </h1>
 
               <p className="hero-subtitle text-secondary mb-4" style={{ fontSize: '1.02rem', lineHeight: 1.75, maxWidth: '520px' }}>
@@ -95,7 +95,7 @@ export const Home = ({ onOpenGetStarted }) => {
                 <button 
                   onClick={() => onOpenGetStarted('quote')} 
                   className="btn btn-avinz-primary px-4 py-3"
-                  style={{ background: '#2563eb', borderRadius: '50px', fontWeight: '600', fontSize: '0.95rem' }}
+                  style={{ background: '#110A5C', borderRadius: '50px', fontWeight: '600', fontSize: '0.95rem' }}
                 >
                   Get a Quote <i className="bi bi-arrow-right ms-1"></i>
                 </button>
@@ -148,7 +148,7 @@ export const Home = ({ onOpenGetStarted }) => {
           <div className="text-center mb-5">
             <span className="section-badge">WHAT WE DO</span>
             <h2 className="display-6 fw-bold mb-2" style={{ color: '#09132e' }}>
-              Creative <span style={{ color: '#2563eb' }}>Solutions</span>
+              Creative <span style={{ color: '#110A5C' }}>Solutions</span>
             </h2>
             <p className="text-muted" style={{ maxWidth: '600px', margin: '0 auto', fontSize: '0.95rem' }}>
               We combine creativity and technology to deliver the best results.
@@ -198,7 +198,7 @@ export const Home = ({ onOpenGetStarted }) => {
           <div className="text-center mb-5">
             <span className="section-badge">WHY CHOOSE US</span>
             <h2 className="display-6 fw-bold mb-2" style={{ color: '#09132e' }}>
-              We Focus on Your <span style={{ color: '#2563eb' }}>Success</span>
+              We Focus on Your <span style={{ color: '#110A5C' }}>Success</span>
             </h2>
             <p className="text-muted" style={{ maxWidth: '600px', margin: '0 auto', fontSize: '0.95rem' }}>
               Creative solutions. Real results.
@@ -240,7 +240,7 @@ export const Home = ({ onOpenGetStarted }) => {
             <div>
               <span className="section-badge mb-2">OUR WORK</span>
               <h2 className="display-6 fw-bold mb-1" style={{ color: '#09132e' }}>
-                Recent <span style={{ color: '#2563eb' }}>Projects</span>
+                Recent <span style={{ color: '#110A5C' }}>Projects</span>
               </h2>
               <p className="text-muted mb-0 small">A glimpse of our creative work and development.</p>
             </div>
@@ -284,7 +284,7 @@ export const Home = ({ onOpenGetStarted }) => {
           <div className="text-center mb-5">
             <span className="section-badge">WHAT OUR STUDENTS SAY</span>
             <h2 className="display-6 fw-bold mb-2" style={{ color: '#09132e' }}>
-              Client Success <span style={{ color: '#2563eb' }}>Stories</span>
+              Client Success <span style={{ color: '#110A5C' }}>Stories</span>
             </h2>
             <p className="text-muted" style={{ maxWidth: '600px', margin: '0 auto', fontSize: '0.95rem' }}>
               Happy clients, successful businesses.
@@ -334,7 +334,7 @@ export const Home = ({ onOpenGetStarted }) => {
           <div 
             className="rounded-4 p-4 p-md-5 text-white position-relative overflow-hidden shadow-lg"
             style={{ 
-              background: 'linear-gradient(135deg, #091747 0%, #102a83 50%, #1e40af 100%)'
+              background: 'linear-gradient(135deg, #110A5C 0%, #110A5C 50%, #110A5C 100%)'
             }}
           >
             <div className="row align-items-center g-4">

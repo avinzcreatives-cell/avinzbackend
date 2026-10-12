@@ -111,12 +111,12 @@ export const GetStartedModal = ({ isOpen, onClose }) => {
                   <svg width="68" height="68" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="50" cy="50" r="46" fill="#ffffff" filter="drop-shadow(0 4px 10px rgba(37,99,235,0.12))"/>
                     {/* Rocket body */}
-                    <path d="M50 18 C62 30, 68 50, 62 68 L50 62 L38 68 C32 50, 38 30, 50 18 Z" fill="#2563eb"/>
+                    <path d="M50 18 C62 30, 68 50, 62 68 L50 62 L38 68 C32 50, 38 30, 50 18 Z" fill="#110A5C"/>
                     <path d="M50 18 C56 30, 58 50, 50 62 C42 50, 44 30, 50 18 Z" fill="#ffffff"/>
-                    <circle cx="50" cy="38" r="5" fill="#2563eb"/>
+                    <circle cx="50" cy="38" r="5" fill="#110A5C"/>
                     {/* Wings */}
-                    <path d="M38 52 L26 62 L34 68 Z" fill="#1d4ed8"/>
-                    <path d="M62 52 L74 62 L66 68 Z" fill="#1d4ed8"/>
+                    <path d="M38 52 L26 62 L34 68 Z" fill="#110A5C"/>
+                    <path d="M62 52 L74 62 L66 68 Z" fill="#110A5C"/>
                     {/* Fire flame */}
                     <path d="M46 66 L50 78 L54 66 Z" fill="#f59e0b"/>
                     <path d="M48 66 L50 74 L52 66 Z" fill="#ef4444"/>
@@ -130,10 +130,10 @@ export const GetStartedModal = ({ isOpen, onClose }) => {
                 <h2 className="fw-bold mb-2" style={{ color: '#09132e', fontSize: 'clamp(1.6rem, 2.4vw, 2.1rem)', lineHeight: 1.25, letterSpacing: '-0.02em' }}>
                   Let’s Build<br />
                   Something<br />
-                  <span style={{ color: '#2563eb' }}>Amazing<br />Together!</span>
+                  <span style={{ color: '#110A5C' }}>Amazing<br />Together!</span>
                 </h2>
 
-                <div style={{ width: '40px', height: '3px', background: '#2563eb', borderRadius: '2px', margin: '14px 0 20px' }}></div>
+                <div style={{ width: '40px', height: '3px', background: '#110A5C', borderRadius: '2px', margin: '14px 0 20px' }}></div>
 
                 <p className="text-secondary small" style={{ lineHeight: 1.7, fontSize: '0.86rem' }}>
                   Whether you’re looking for professional design services or need custom web solutions, we’re here to help you take the next step.
@@ -341,18 +341,14 @@ export const GetStartedModal = ({ isOpen, onClose }) => {
                     <div className="row g-3 mb-3">
                       <div className="col-md-6">
                         <label className="form-label small fw-bold text-secondary mb-1" style={{ fontSize: '0.8rem' }}>Budget (For Services)</label>
-                        <select
-                          className="form-select small"
+                        <input
+                          type="text"
+                          className="form-control small"
+                          placeholder="Enter your budget"
                           value={formData.budget}
                           onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                           style={{ fontSize: '0.84rem' }}
-                        >
-                          <option value="">Select your budget</option>
-                          <option value="Under ₹25,000">Under ₹25,000</option>
-                          <option value="₹25,000 - ₹50,000">₹25,000 - ₹50,000</option>
-                          <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
-                          <option value="₹1,00,000+">₹1,00,000+</option>
-                        </select>
+                        />
                       </div>
 
                       <div className="col-md-6">

@@ -25,8 +25,8 @@ export const Services = ({ onOpenGetStarted }) => {
   return (
     <>
       <SEO
-        title="Services | Web Development, UI/UX, Graphic Design & MERN Stack"
-        description="Explore comprehensive creative design and modern web development services offered by Avinz Creatives. From custom MERN apps to brand identity and UI/UX."
+        title="Services | Web Development, UI/UX & Graphic Design"
+        description="Explore comprehensive creative design and modern web development services offered by Avinz Creatives. From custom web applications to brand identity and UI/UX."
       />
 
       {/* ====================================================================

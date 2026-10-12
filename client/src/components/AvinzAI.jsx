@@ -58,7 +58,7 @@ const AvinzAI = () => {
           width: '60px',
           height: '60px',
           zIndex: 1050,
-          background: 'linear-gradient(135deg, #2563eb, #1e40af)',
+          background: 'linear-gradient(135deg, #110A5C, #110A5C)',
           border: 'none',
           transition: 'transform 0.3s ease'
         }}
@@ -83,7 +83,7 @@ const AvinzAI = () => {
           }}
         >
           {/* Header */}
-          <div className="bg-primary text-white p-3 d-flex align-items-center justify-content-between" style={{ background: 'linear-gradient(135deg, #2563eb, #1e40af)' }}>
+          <div className="bg-primary text-white p-3 d-flex align-items-center justify-content-between" style={{ background: 'linear-gradient(135deg, #110A5C, #110A5C)' }}>
             <div className="d-flex align-items-center gap-2">
               <i className="bi bi-robot fs-5"></i>
               <h6 className="mb-0 fw-bold">Avinz AI</h6>

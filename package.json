@@ -1,7 +1,7 @@
 {
   "name": "avinz-creatives",
   "version": "1.0.0",
-  "description": "Avinz Creatives - Design Agency & Technology Training Institute MERN Web Application",
+  "description": "Avinz Creatives - Creative Design & Web Development Agency",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "npm run dev --prefix client",

@@ -1,9 +1,10 @@
 /**
  * Avinz Creatives API Service
- * Handles communications with the Express.js mail backend
+ * Handles communications with serverless functions and Express mail backend
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://avinzbackend-5.onrender.com/api';
+const API_BASE_URL = (import.meta.env.VITE_API_URL || '/api').replace(/\/$/, '');
+const FALLBACK_API_URL = 'https://avinzbackend-5.onrender.com/api';
 
 export const sendContactMessage = async (formData) => {
   try {
@@ -21,15 +22,25 @@ export const sendContactMessage = async (formData) => {
     }
     return data;
   } catch (error) {
-    console.error('API Error [sendContactMessage]:', error);
-    // In demo or offline mode, simulate success if connection is refused so user testing isn't blocked
-    if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-      return {
-        success: true,
-        simulated: true,
-        message: 'Thank you! Your message has been received (Local Demo Mode). We will reach out shortly.'
-      };
+    console.warn('[sendContactMessage] Primary endpoint failed, attempting fallback...', error);
+    
+    // Fallback to secondary endpoint if primary fails
+    try {
+      if (API_BASE_URL !== FALLBACK_API_URL) {
+        const fbRes = await fetch(`${FALLBACK_API_URL}/contact`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        const fbData = await fbRes.json();
+        if (fbRes.ok && fbData.success) {
+          return fbData;
+        }
+      }
+    } catch (fallbackError) {
+      console.error('[sendContactMessage Fallback Error]:', fallbackError);
     }
+
     throw error;
   }
 };
@@ -50,14 +61,24 @@ export const sendQuoteRequest = async (quoteData) => {
     }
     return data;
   } catch (error) {
-    console.error('API Error [sendQuoteRequest]:', error);
-    if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-      return {
-        success: true,
-        simulated: true,
-        message: 'Quote request recorded (Local Demo Mode). Our team will connect with you soon.'
-      };
+    console.warn('[sendQuoteRequest] Primary endpoint failed, attempting fallback...', error);
+    
+    try {
+      if (API_BASE_URL !== FALLBACK_API_URL) {
+        const fbRes = await fetch(`${FALLBACK_API_URL}/quote`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(quoteData),
+        });
+        const fbData = await fbRes.json();
+        if (fbRes.ok && fbData.success) {
+          return fbData;
+        }
+      }
+    } catch (fallbackError) {
+      console.error('[sendQuoteRequest Fallback Error]:', fallbackError);
     }
+
     throw error;
   }
 };
@@ -79,13 +100,9 @@ export const sendAIChatMessage = async (messages) => {
     return data;
   } catch (error) {
     console.error('API Error [sendAIChatMessage]:', error);
-    if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-      return {
-        success: true,
-        simulated: true,
-        reply: 'This is a simulated response (Local Demo Mode).'
-      };
-    }
-    throw error;
+    return {
+      success: true,
+      reply: 'Hello! You can also reach our team directly at +91 7806888047 or avinzcreatives@gmail.com for instant answers!'
+    };
   }
 };

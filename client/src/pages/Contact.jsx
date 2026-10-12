@@ -101,8 +101,8 @@ export const Contact = ({ onOpenGetStarted }) => {
                   <span 
                     style={{
                       display: 'inline-block',
-                      backgroundColor: '#eff6ff',
-                      color: '#2563eb',
+                      backgroundColor: 'var(--avinz-blue-50)',
+                      color: '#110A5C',
                       fontWeight: '700',
                       fontSize: '0.78rem',
                       letterSpacing: '0.08em',
@@ -128,7 +128,7 @@ export const Contact = ({ onOpenGetStarted }) => {
                   }}
                 >
                   Let's Connect.<br />
-                  <span style={{ color: '#2563eb' }}>We're Here to Help!</span>
+                  <span style={{ color: '#110A5C' }}>We're Here to Help!</span>
                 </h1>
 
                 {/* Horizontal Blue Line */}
@@ -136,7 +136,7 @@ export const Contact = ({ onOpenGetStarted }) => {
                   style={{
                     width: '42px',
                     height: '3.5px',
-                    backgroundColor: '#2563eb',
+                    backgroundColor: '#110A5C',
                     borderRadius: '2px',
                     marginTop: '14px',
                     marginBottom: '20px'
@@ -166,8 +166,8 @@ export const Contact = ({ onOpenGetStarted }) => {
                         width: '40px',
                         height: '40px',
                         borderRadius: '50%',
-                        backgroundColor: '#eff6ff',
-                        color: '#2563eb',
+                        backgroundColor: 'var(--avinz-blue-50)',
+                        color: '#110A5C',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -197,8 +197,8 @@ export const Contact = ({ onOpenGetStarted }) => {
                         width: '40px',
                         height: '40px',
                         borderRadius: '50%',
-                        backgroundColor: '#eff6ff',
-                        color: '#2563eb',
+                        backgroundColor: 'var(--avinz-blue-50)',
+                        color: '#110A5C',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -228,8 +228,8 @@ export const Contact = ({ onOpenGetStarted }) => {
                         width: '40px',
                         height: '40px',
                         borderRadius: '50%',
-                        backgroundColor: '#eff6ff',
-                        color: '#2563eb',
+                        backgroundColor: 'var(--avinz-blue-50)',
+                        color: '#110A5C',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -256,8 +256,8 @@ export const Contact = ({ onOpenGetStarted }) => {
                         width: '40px',
                         height: '40px',
                         borderRadius: '50%',
-                        backgroundColor: '#eff6ff',
-                        color: '#2563eb',
+                        backgroundColor: 'var(--avinz-blue-50)',
+                        color: '#110A5C',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -307,11 +307,11 @@ export const Contact = ({ onOpenGetStarted }) => {
                       />
                       <path 
                         d="M75 12 L 88 5 L 82 20 L 78 14 Z" 
-                        fill="#2563eb" 
+                        fill="#110A5C" 
                       />
                       <path 
                         d="M75 12 L 88 5 L 80 12 Z" 
-                        fill="#1d4ed8" 
+                        fill="#110A5C" 
                       />
                     </svg>
                   </div>
@@ -500,7 +500,7 @@ export const Contact = ({ onOpenGetStarted }) => {
                       type="submit"
                       disabled={loading}
                       style={{
-                        backgroundColor: '#2563eb',
+                        backgroundColor: '#110A5C',
                         color: '#ffffff',
                         width: '100%',
                         padding: '13px',
@@ -517,8 +517,8 @@ export const Contact = ({ onOpenGetStarted }) => {
                         cursor: loading ? 'not-allowed' : 'pointer',
                         marginBottom: '16px'
                       }}
-                      onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#1d4ed8'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#2563eb'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                      onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#110A5C'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#110A5C'; e.currentTarget.style.transform = 'translateY(0)'; }}
                     >
                       {loading ? 'Sending...' : 'Send Message'} <i className="bi bi-arrow-right"></i>
                     </button>
@@ -573,8 +573,8 @@ export const Contact = ({ onOpenGetStarted }) => {
                         width: '52px',
                         height: '52px',
                         borderRadius: '50%',
-                        backgroundColor: '#eff6ff',
-                        color: '#2563eb',
+                        backgroundColor: 'var(--avinz-blue-50)',
+                        color: '#110A5C',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -642,7 +642,7 @@ export const Contact = ({ onOpenGetStarted }) => {
                       type="button"
                       onClick={() => setMapMode('google')}
                       style={{
-                        backgroundColor: mapMode === 'google' ? '#2563eb' : 'transparent',
+                        backgroundColor: mapMode === 'google' ? '#110A5C' : 'transparent',
                         color: mapMode === 'google' ? '#ffffff' : '#64748b',
                         border: 'none',
                         borderRadius: '50px',
@@ -662,7 +662,7 @@ export const Contact = ({ onOpenGetStarted }) => {
                       type="button"
                       onClick={() => setMapMode('landmarks')}
                       style={{
-                        backgroundColor: mapMode === 'landmarks' ? '#2563eb' : 'transparent',
+                        backgroundColor: mapMode === 'landmarks' ? '#110A5C' : 'transparent',
                         color: mapMode === 'landmarks' ? '#ffffff' : '#64748b',
                         border: 'none',
                         borderRadius: '50px',
@@ -818,7 +818,7 @@ export const Contact = ({ onOpenGetStarted }) => {
 
                       <div 
                         className="position-absolute d-flex align-items-center gap-1 px-2 py-1 bg-white shadow-sm rounded-pill"
-                        style={{ bottom: '15%', left: '25%', border: '1px solid #e2e8f0', fontSize: '0.74rem', fontWeight: '600', color: '#2563eb' }}
+                        style={{ bottom: '15%', left: '25%', border: '1px solid #e2e8f0', fontSize: '0.74rem', fontWeight: '600', color: '#110A5C' }}
                       >
                         <i className="bi bi-bag-check-fill text-primary"></i>
                         <span>Fun Republic Mall</span>
@@ -854,7 +854,7 @@ export const Contact = ({ onOpenGetStarted }) => {
                             style={{
                               width: '38px',
                               height: '48px',
-                              backgroundColor: '#1d4ed8',
+                              backgroundColor: '#110A5C',
                               borderRadius: '50% 50% 50% 0',
                               transform: 'rotate(-45deg)',
                               display: 'flex',
@@ -901,8 +901,8 @@ export const Contact = ({ onOpenGetStarted }) => {
                           width: '36px',
                           height: '36px',
                           borderRadius: '50%',
-                          backgroundColor: '#eff6ff',
-                          color: '#2563eb',
+                          backgroundColor: 'var(--avinz-blue-50)',
+                          color: '#110A5C',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
@@ -954,15 +954,15 @@ export const Contact = ({ onOpenGetStarted }) => {
                         width: '100%',
                         padding: '11px 24px',
                         borderRadius: '50px',
-                        border: '1.5px solid #2563eb',
+                        border: '1.5px solid #110A5C',
                         backgroundColor: '#ffffff',
-                        color: '#2563eb',
+                        color: '#110A5C',
                         fontWeight: '600',
                         fontSize: '0.92rem',
                         textDecoration: 'none',
                         transition: 'all 0.25s ease'
                       }}
-                      onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#eff6ff'; }}
+                      onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--avinz-blue-50)'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#ffffff'; }}
                     >
                       Get Directions <i className="bi bi-arrow-right"></i>
@@ -985,7 +985,7 @@ export const Contact = ({ onOpenGetStarted }) => {
             <div 
               className="position-relative overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, #091747 0%, #102a83 50%, #1e40af 100%)',
+                background: 'linear-gradient(135deg, #110A5C 0%, #110A5C 50%, #110A5C 100%)',
                 borderRadius: '20px',
                 padding: 'clamp(32px, 4vw, 44px)',
                 boxShadow: '0 20px 45px -10px rgba(16, 42, 131, 0.4)'
@@ -1028,7 +1028,7 @@ export const Contact = ({ onOpenGetStarted }) => {
                       <ellipse cx="60" cy="76" rx="28" ry="6" fill="#09132e" opacity="0.4" />
                       
                       {/* Envelope Back */}
-                      <rect x="38" y="34" width="48" height="34" rx="4" fill="#2563eb" />
+                      <rect x="38" y="34" width="48" height="34" rx="4" fill="#110A5C" />
                       
                       {/* Paper Letter Coming Out */}
                       <rect x="43" y="22" width="38" height="28" rx="3" fill="#ffffff" />
@@ -1037,9 +1037,9 @@ export const Contact = ({ onOpenGetStarted }) => {
                       <line x1="48" y1="40" x2="62" y2="40" stroke="#e2e8f0" strokeWidth="2" strokeLinecap="round" />
 
                       {/* Envelope Front Wings */}
-                      <path d="M38 68 L 62 48 L 86 68 Z" fill="#1d4ed8" />
-                      <path d="M38 34 L 62 52 L 38 68 Z" fill="#3b82f6" opacity="0.9" />
-                      <path d="M86 34 L 62 52 L 86 68 Z" fill="#2563eb" />
+                      <path d="M38 68 L 62 48 L 86 68 Z" fill="#110A5C" />
+                      <path d="M38 34 L 62 52 L 38 68 Z" fill="#110A5C" opacity="0.9" />
+                      <path d="M86 34 L 62 52 L 86 68 Z" fill="#110A5C" />
 
                       {/* Speech Bubble */}
                       <g transform="translate(68, 6)">
@@ -1092,7 +1092,7 @@ export const Contact = ({ onOpenGetStarted }) => {
                     }}
                     style={{
                       backgroundColor: '#ffffff',
-                      color: '#091747',
+                      color: '#110A5C',
                       fontWeight: '700',
                       fontSize: '0.92rem',
                       padding: '12px 28px',

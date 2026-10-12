@@ -77,10 +77,10 @@ export const Testimonials = ({ onOpenGetStarted }) => {
 
               <h1 className="hero-title fw-bold mb-2" style={{ fontSize: 'clamp(2.3rem, 4.2vw, 3.3rem)', lineHeight: 1.18, color: '#09132e' }}>
                 Real People. Real Stories.<br />
-                <span style={{ color: '#2563eb' }}>Real Success.</span>
+                <span style={{ color: '#110A5C' }}>Real Success.</span>
               </h1>
 
-              <div style={{ width: '45px', height: '3.5px', background: '#2563eb', borderRadius: '2px', margin: '14px 0 20px' }}></div>
+              <div style={{ width: '45px', height: '3.5px', background: '#110A5C', borderRadius: '2px', margin: '14px 0 20px' }}></div>
 
               <p className="text-secondary mb-4" style={{ fontSize: '1rem', lineHeight: 1.75, maxWidth: '520px' }}>
                 We take pride in the trust and appreciation we receive from our clients. Their success is our motivation.
@@ -183,7 +183,7 @@ export const Testimonials = ({ onOpenGetStarted }) => {
           <div className="text-center mb-5">
             <span className="section-badge">CLIENT REVIEWS</span>
             <h2 className="display-6 fw-bold mb-2" style={{ color: '#09132e' }}>
-              What Our <span style={{ color: '#2563eb' }}>Clients</span> Say
+              What Our <span style={{ color: '#110A5C' }}>Clients</span> Say
             </h2>
             <p className="text-muted small mb-0">We build long-term relationships with our clients through quality and trust.</p>
           </div>
@@ -283,7 +283,7 @@ export const Testimonials = ({ onOpenGetStarted }) => {
         <div className="container">
           <div 
             className="rounded-4 p-4 p-md-5 text-white position-relative overflow-hidden shadow-lg"
-            style={{ background: 'linear-gradient(135deg, #091747 0%, #102a83 50%, #1e40af 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #110A5C 0%, #110A5C 50%, #110A5C 100%)' }}
           >
             <div className="row align-items-center g-4">
               {/* Left Trophy Illustration */}
